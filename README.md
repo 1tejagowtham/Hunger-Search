@@ -1,9 +1,10 @@
-# Hunger-Search
+# Hunger Search
 As part of Codecademy project, this is a yelp-like clone website using React and Yelp API.
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+---
 ## Available Scripts
 
 In the project directory, you can run:
@@ -16,57 +17,82 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
+---
+## Project details
+Here’s a quick overview of how Hunger search will function:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* As a user, I should be able to search for restaurants.
+* As a user, I should be able to view a list of restaurants returned by the Yelp API.
+* As a user, I should be able to sort through restaurants using a filter.
 
-### `npm run build`
+<br>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This Project is divided into **4 parts**:-
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1. Creating Static Components.
+2. Passing Information to Components.
+3. Setting the State of Hunger Search Components.
+4. Interacting with the Yelp API.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
+## Part-1
 
-### `npm run eject`
+We shall have four different components, interacting with each other.
+* `<Business />`
+* `<BusinessList />`
+* `<SearchBar />`
+* `<App />` (created by default with create-react-app)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+For time being in the part-1 we have all the four components without functionality, and the functionality will be added in the later parts.<br>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Inside the **src/** directory a **components** folder is created for the respective components.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Inside the components directory we have four folders.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* **App** (contains `App.js` and `App.css`)
+* **Business** (contains `Business.js` and `Business.css`)
+* **BusinessList** (contains `BusinessList.js` and `BusinessList.css`)
+* **SearchBar** (contains `SearchBar.js` and `SearchBar.css`)
+<br>
 
-## Learn More
+The purpose of the `<Business />` component is to represent how a business (a restaurant) in Hunger Search will be formatted and styled. For now, we’ll hard code a single business listing. Later, we shall update it dynamically using the Yelp API.
+<br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The point of the `<BusinessList />` component is to simulate what a returned list of businesses would look like in Hunger Search(after querying the Yelp API, for example). To help this simulation, `<BusinessList />` will make use of the `<Business />` component repeatedly.`<Business />` component is imported to `<BusinessList`.
+<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The search bar will communicate with the Yelp API, but we shall build the functionality to communicate with the API in a later part of the project. Specifically, requests to the Yelp API must follow formatting and naming conventions set by the API. For example, the search bar should allow users to search businesses by:
 
-### Code Splitting
+* Best Match
+* Highest Rated
+* Most Reviewed
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+To achieve this, we created an object with keys and values that conform to what the API expects to receive.
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Inside the `<SearchBar />` we have written a method. The purpose of renderSortByOptions() is to dynamically create the list items needed to display the sort options (Best Match, Highest Rated, Most Reviewed). This is to help future proof against potential changes to the Yelp API.
 
-### Making a Progressive Web App
+The method iterates through the keys and values of the sortByOptions object and return a list item. The list item will should use the keys as an attribute, and the values as content.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Fianlly `<App />` component imports `<BusinessList />` and `<SearchBar />` components.
 
-### Advanced Configuration
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### Final Summary of Part-1
+<br>
 
-### Deployment
+A `<Business />` component that simulates a single business.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+A `<BusinessList />` component that simulates a list of single businesses.
 
-### `npm run build` fails to minify
+A `<SearchBar />` component that will be used in the future to search for business.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+The `<App />` component renders a `<SearchBar />` component and a `<BusinessList />` component. The final product is a simulation of how the Hunger Search project will look and work. Some functionality (like querying the Yelp API) is currently missing, but we shall build it in the upcoming parts.
+
+---
+## The webpage image
+
+![Hunger Search Home Page](./home_page.png)
+
+
+
