@@ -2,6 +2,11 @@
 As part of Codecademy project, this is a yelp-like clone website using React and Yelp API.
 
 
+## The webpage image
+
+![Hunger Search Home Page](./home_page.png)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ---
@@ -90,9 +95,12 @@ A `<SearchBar />` component that will be used in the future to search for busine
 The `<App />` component renders a `<SearchBar />` component and a `<BusinessList />` component. The final product is a simulation of how the Hunger Search project will look and work. Some functionality (like querying the Yelp API) is currently missing, but we shall build it in the upcoming parts.
 
 ---
-## The webpage image
+## Part-2
 
-![Hunger Search Home Page](./home_page.png)
+Moved business information object to the container component (`App`).
+
+
+Passed information from parent components (`App`) to child components (App -> BusinessList -> Business).
 
 
 
