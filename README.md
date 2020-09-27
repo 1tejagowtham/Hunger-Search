@@ -96,11 +96,21 @@ The `<App />` component renders a `<SearchBar />` component and a `<BusinessList
 
 ---
 ## Part-2
+In the part-2 we passed information to the components.
 
 Moved business information object to the container component (`App`).
 
 
 Passed information from parent components (`App`) to child components (App -> BusinessList -> Business).
 
+---
+## Part-3
+In part-3 we have the set the state of the components.
+
+For example, the sorting options in the search bar will change (and we’ll need to know their state when communicating with the Yelp API). The same goes for the two input elements. These are the kinds of changes you’ll handle in this project.
+
+So, in the part-3 visual feedback is added for the sorting options at the top of the search bar.
+
+After setting the state of sorting options and input elements, simulated a search query with the **Let's Go** button.
 
 
