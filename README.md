@@ -10,7 +10,12 @@ As part of Codecademy project, this is a yelp-like clone website using React and
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ---
+
+### **Note:** After cloning, get your own API key from Yelp website and paste it in Yelp.js file to successfully run the application as I couldn't make my API key public.
+
+---
 ## Available Scripts
+
 
 In the project directory, you can run:
 
@@ -112,5 +117,14 @@ For example, the sorting options in the search bar will change (and we’ll need
 So, in the part-3 visual feedback is added for the sorting options at the top of the search bar.
 
 After setting the state of sorting options and input elements, simulated a search query with the **Let's Go** button.
+
+---
+Part-4
+
+In the final part interacting with the Yelp API is done.
+
+So far, Ravenous is mostly static. Clicking on the “Let’s Go” button doesn’t retrieve results from the Yelp API. So, using Yelp API, a functionality is added to get search results. 
+
+
 
 
