@@ -123,7 +123,7 @@ Part-4
 
 In the final part interacting with the Yelp API is done.
 
-So far, Ravenous is mostly static. Clicking on the “Let’s Go” button doesn’t retrieve results from the Yelp API. So, using Yelp API, a functionality is added to get search results. 
+So far, Hunger search is mostly static. Clicking on the “Let’s Go” button doesn’t retrieve results from the Yelp API. So, using Yelp API, a functionality is added to get search results. 
 
 
 
